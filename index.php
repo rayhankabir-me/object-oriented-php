@@ -44,5 +44,9 @@ $object = new User;
 $object->setData(9999, "rayhan kabir", "devrayhankabir@gmail.com", 2322);
 echo $object->getData();
 
+$obejectTwo = new User;
+$obejectTwo->setData(2222, "ashikur rahman", "ashikurrahman@gmail.com", 4444);
+echo $obejectTwo->getData();
+
 
 ?>
