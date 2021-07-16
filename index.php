@@ -1,9 +1,12 @@
-<h1>Hello world</h1><hr>
-<?php 
+<h1>Hello world</h1>
+<hr>
+<?php
 
-class Hello{
+class Hello
+{
 
-    public function sayHello(){
+    public function sayHello()
+    {
 
         echo "hello world";
     }
@@ -15,28 +18,31 @@ $ob->sayHello();
 
 ?>
 
-<h1>Object and classes</h1> <hr>
-<?php 
-class User{
+<h1>Object and classes</h1>
+<hr>
+<?php
+class User
+{
 
     public $id;
     public $name;
     public $email;
     public $phone;
-    
 
-    public function setData($i, $n, $e, $p){
+
+    public function setData($i, $n, $e, $p)
+    {
 
         $this->id = $i;
         $this->name = $n;
         $this->email = $e;
         $this->phone = $p;
-
     }
 
-    public function getData(){
+    public function getData()
+    {
 
-        return "User id is: ".$this->id."<br>"."name is: ".$this->name."<br>"."email is: ".$this->email."<br>"."phone is: ".$this->phone;
+        return "User id is: " . $this->id . "<br>" . "name is: " . $this->name . "<br>" . "email is: " . $this->email . "<br>" . "phone is: " . $this->phone;
     }
 }
 
@@ -48,5 +54,55 @@ $obejectTwo = new User;
 $obejectTwo->setData(2222, "ashikur rahman", "ashikurrahman@gmail.com", 4444);
 echo $obejectTwo->getData();
 
+
+?>
+
+<h1>Constructor and desctructor</h1>
+<hr>
+
+<?php
+
+class Person
+{
+
+    function __construct()
+    {
+        echo "The class '" . __CLASS__ . "' has been initiated<br>";
+    }
+
+    function __destruct()
+    {
+        echo "The class '" . __CLASS__ . "' has been initiated<br>";  //eta sobar ses load hobe krn desctruct method sobar sese run kore
+    }
+}
+
+$object = new Person;
+
+
+?>
+
+<h1>Constructor and desctructor assigning value</h1><hr>
+<?php
+//assigning value to the contstruct method
+
+class Man{
+
+    private $first_name;
+    private $last_name;
+
+    function __construct($fname, $lname)
+    {
+        $this->first_name = $fname;
+        $this->last_name = $lname;
+
+    }
+
+    public function showName(){
+
+        echo "My name is: ".$this->first_name. " ".$this->last_name."<br>";
+    }
+}
+$object = new Man("Rayhan", "Kabir");
+$object->showName();
 
 ?>
