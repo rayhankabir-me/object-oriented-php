@@ -81,11 +81,13 @@ $object = new Person;
 
 ?>
 
-<h1>Constructor and desctructor assigning value</h1><hr>
+<h1>Constructor and desctructor assigning value</h1>
+<hr>
 <?php
 //assigning value to the contstruct method
 
-class Man{
+class Man
+{
 
     private $first_name;
     private $last_name;
@@ -94,15 +96,60 @@ class Man{
     {
         $this->first_name = $fname;
         $this->last_name = $lname;
-
     }
 
-    public function showName(){
+    public function showName()
+    {
 
-        echo "My name is: ".$this->first_name. " ".$this->last_name."<br>";
+        echo "My name is: " . $this->first_name . " " . $this->last_name . "<br>";
     }
 }
 $object = new Man("Rayhan", "Kabir");
+
 $object->showName();
 
+
+?>
+
+<h1>Static properties and methods</h1>
+<hr>
+
+<?php
+
+class Test
+{
+
+    public static $name;
+
+    public static function showName()
+    {
+
+        return self::$name;
+    }
+}
+
+Test::$name = "Rayhan Kabir";
+echo Test::showName();
+?>
+
+<h1>Static properties and methods another class</h1><hr>
+
+<?php
+
+class Info{
+
+
+public static $id = 1;
+public static $name = "John";
+
+public static function showData(){
+
+    echo "Id is: ".self::$id++ ."<br>";
+    echo "Name is: ".self::$name. "<br>";
+}
+}
+
+Info::showData();
+Info::showData();
+Info::showData();
 ?>
