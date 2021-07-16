@@ -34,17 +34,14 @@ class User{
 
     }
 
-    public getData(){
+    public function getData(){
 
-        return "User id is: ".$this->id;
-        return "User name is: ".$this->name;
-        return "User email is: ".$this->email;
-        return "User phone is: ".$this->phone;
+        return "User id is: ".$this->id."<br>"."name is: ".$this->name."<br>"."email is: ".$this->email."<br>"."phone is: ".$this->phone;
     }
 }
 
 $object = new User;
-$object->setData(9999, "rayhan kabir", "devrayhankabir@gmail.com", 01643163478);
+$object->setData(9999, "rayhan kabir", "devrayhankabir@gmail.com", 2322);
 echo $object->getData();
 
 
