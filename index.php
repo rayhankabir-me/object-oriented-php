@@ -190,11 +190,13 @@ echo $object->first_name . " " . $object->last_name;
 
 ?>
 
-<h1>Encapsulation(getter and setter method)</h1><hr>
+<h1>Encapsulation(getter and setter method)</h1>
+<hr>
 
 <?php
 
-class personInfo{
+class personInfo
+{
 
 
     private $id;
@@ -202,34 +204,37 @@ class personInfo{
     private $email;
 
 
-    public function setId($id){
+    public function setId($id)
+    {
 
         $this->id = $id;
     }
-    public function getId(){
+    public function getId()
+    {
 
         return $this->id;
     }
 
-    public function setName($name){
+    public function setName($name)
+    {
 
         $this->name = $name;
     }
 
-    public function getName(){
+    public function getName()
+    {
         return $this->name;
     }
-    
-    public function setEmail($email){
-        $this->email = $email;
 
+    public function setEmail($email)
+    {
+        $this->email = $email;
     }
 
-    public function getEmail(){
+    public function getEmail()
+    {
         return $this->email;
     }
-
-
 }
 
 $object = new personInfo;
@@ -239,5 +244,40 @@ $object->setName("Rayhan Kabir");
 echo $object->getName() . "<br>";
 $object->setEmail("devrayhankabir@gmail.com");
 echo $object->getEmail() . "<br>";
+
+?>
+
+<h1>Inheritance</h1><hr>
+
+<?php
+class People{
+
+    protected $id;
+    protected $name;
+    protected $email;
+
+    public function showPeople($i, $n, $e){
+
+        echo "Id is: ".$this->id = $i."<br>";
+        echo "Name is: ".$this->name = $n."<br>";
+        echo "Email is: ".$this->email = $e."<br>";
+    }
+}
+
+class Employee extends People{
+
+    private $salary;
+    private $post;
+
+    public function showEmployee($i, $n, $e, $s, $p){
+
+        $this->showPeople($i, $n, $e);
+        echo "Salary is: ".$this->salary = $s."<br>";
+        echo "Post is: ".$this->post = $p."<br>";
+    }
+}
+
+$object = new Employee;
+$object->showEmployee(99, "Rayhan Kabir", 'devrayhankabir@gmail.com',50000, 'web developer');
 
 ?>
