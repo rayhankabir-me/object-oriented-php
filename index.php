@@ -247,7 +247,7 @@ echo $object->getEmail() . "<br>";
 
 ?>
 
-<h1>Inheritance</h1><hr>
+<h1>Multi level Inheritance</h1><hr>
 
 <?php
 class People{
@@ -256,7 +256,7 @@ class People{
     protected $name;
     protected $email;
 
-    public function showPeople($i, $n, $e){
+    protected function showPeople($i, $n, $e){   //make it protected if you don't want someone to access
 
         echo "Id is: ".$this->id = $i."<br>";
         echo "Name is: ".$this->name = $n."<br>";
@@ -269,7 +269,7 @@ class Employee extends People{
     private $salary;
     private $post;
 
-    public function showEmployee($i, $n, $e, $s, $p){
+    public function showEmployee($i, $n, $e, $s, $p){    //make it protected if you don't want someone to access, now it is public, so you can access. 
 
         $this->showPeople($i, $n, $e);
         echo "Salary is: ".$this->salary = $s."<br>";
@@ -277,7 +277,20 @@ class Employee extends People{
     }
 }
 
-$object = new Employee;
-$object->showEmployee(99, "Rayhan Kabir", 'devrayhankabir@gmail.com',50000, 'web developer');
+class Manager extends Employee{
+
+    private $spin;
+    private $keyword;
+
+    public function showManager($i, $n, $e, $s, $p, $sp, $k){
+
+        $this->showEmployee($i, $n, $e, $s, $p);
+        echo "Pin is: ".$this->pin = $sp."<br>";
+        echo "Keyword is: ".$this->keyword = $k."<br>";
+    }
+}
+
+$object = new Manager;
+$object->showManager(99, "Rayhan Kabir", 'devrayhankabir@gmail.com',50000, 'web developer', 2929, 'keyword');
 
 ?>
