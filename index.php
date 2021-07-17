@@ -153,3 +153,33 @@ Info::showData();
 Info::showData();
 Info::showData();
 ?>
+
+<h1>Static properties and methods another use(trimming)</h1><hr>
+
+<?php 
+
+class Word{
+
+    public $first_name;
+    public $last_name;
+
+
+    public function __construct($fname,$lname)
+
+    {
+            $this->first_name = self::filterName($fname);
+            $this->last_name = self::filterName($lname);    
+    }
+
+    public static function filterName($name){
+
+        $name = trim($name);
+        $name = preg_replace('/[^a-zA-Z0-9]/', '', $name);
+        return $name;
+    }
+}
+
+$object = new Word("Rayhan     ", "@@@@@Kabir");
+echo $object->first_name. " ". $object->last_name;
+
+?>
