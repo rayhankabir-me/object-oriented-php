@@ -132,21 +132,24 @@ Test::$name = "Rayhan Kabir";
 echo Test::showName();
 ?>
 
-<h1>Static properties and methods another class</h1><hr>
+<h1>Static properties and methods another class</h1>
+<hr>
 
 <?php
 
-class Info{
+class Info
+{
 
 
-public static $id = 1;
-public static $name = "John";
+    public static $id = 1;
+    public static $name = "John";
 
-public static function showData(){
+    public static function showData()
+    {
 
-    echo "Id is: ".self::$id++ ."<br>";
-    echo "Name is: ".self::$name. "<br>";
-}
+        echo "Id is: " . self::$id++ . "<br>";
+        echo "Name is: " . self::$name . "<br>";
+    }
 }
 
 Info::showData();
@@ -154,24 +157,27 @@ Info::showData();
 Info::showData();
 ?>
 
-<h1>Static properties and methods another use(trimming)</h1><hr>
+<h1>Static properties and methods another use(trimming)</h1>
+<hr>
 
-<?php 
+<?php
 
-class Word{
+class Word
+{
 
     public $first_name;
     public $last_name;
 
 
-    public function __construct($fname,$lname)
+    public function __construct($fname, $lname)
 
     {
-            $this->first_name = self::filterName($fname);
-            $this->last_name = self::filterName($lname);    
+        $this->first_name = self::filterName($fname);
+        $this->last_name = self::filterName($lname);
     }
 
-    public static function filterName($name){
+    public static function filterName($name)
+    {
 
         $name = trim($name);
         $name = preg_replace('/[^a-zA-Z0-9]/', '', $name);
@@ -180,6 +186,58 @@ class Word{
 }
 
 $object = new Word("Rayhan     ", "@@@@@Kabir");
-echo $object->first_name. " ". $object->last_name;
+echo $object->first_name . " " . $object->last_name;
+
+?>
+
+<h1>Encapsulation(getter and setter method)</h1><hr>
+
+<?php
+
+class personInfo{
+
+
+    private $id;
+    private $name;
+    private $email;
+
+
+    public function setId($id){
+
+        $this->id = $id;
+    }
+    public function getId(){
+
+        return $this->id;
+    }
+
+    public function setName($name){
+
+        $this->name = $name;
+    }
+
+    public function getName(){
+        return $this->name;
+    }
+    
+    public function setEmail($email){
+        $this->email = $email;
+
+    }
+
+    public function getEmail(){
+        return $this->email;
+    }
+
+
+}
+
+$object = new personInfo;
+$object->setId(5);
+echo $object->getId() . "<br>";
+$object->setName("Rayhan Kabir");
+echo $object->getName() . "<br>";
+$object->setEmail("devrayhankabir@gmail.com");
+echo $object->getEmail() . "<br>";
 
 ?>
