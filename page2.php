@@ -3,8 +3,7 @@
 
 <?php
 
-use Person as GlobalPerson;
-use User as GlobalUser;
+
 
 abstract class Person{
 
