@@ -45,18 +45,22 @@ class Rectangle implements Shape{
 
         private $base;
         private $height;
+        
 
         public function __construct($b, $h)
         {
             
             $this->base = $b;
             $this->height = $h;
+
+            
+            
             
         }
 
     public function calculateArea()
     {
-        echo "The area of Triangle is: " . ($this->base * $this->height)/2 . "<br>";
+        echo "The area of Triangle is: " . ($this->base*$this->height)/2 . "<br>";
     }
     }
 
@@ -66,7 +70,7 @@ $ob->calculateArea();
 $object = new Rectangle(5, 6);
 $object->calculateArea();
 
-$object2 = new Triangle(4, 5);
+$object2 = new Triangle(2, 8);
 $object2->calculateArea();
 
 ?>
