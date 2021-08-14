@@ -106,6 +106,6 @@ class User2 extends Info implements Test4{
 
 $ob = new User2;
 $ob->showNumber();
-$ob->showInfo();
+$ob->showInfo("rakib");
 
 ?>
