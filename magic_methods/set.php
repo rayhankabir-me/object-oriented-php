@@ -18,6 +18,11 @@ class User{
         elseif($Propertyname == "age"){
             $this->age = $Propertyvalue;
         }
+        else{
+            echo "this property ({$Propertyname}) is not exists in this (" . __CLASS__ . ") class ! <br>";
+        }
+            
+        
     }
 
     public function showValue(){
@@ -30,6 +35,7 @@ class User{
 $ob = new User;
 $ob->name = "rayhan";
 $ob->age = 24;
+$ob->id = 22;
 $ob->showValue();
 
 ?>
