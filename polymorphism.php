@@ -37,12 +37,36 @@ class Rectangle implements Shape{
     {
         echo "The area of rectangle is: ".$this->width*$this->height."<br>";
     }
+
+
 }
+
+    class Triangle implements Shape{
+
+        private $base;
+        private $height;
+
+        public function __construct($b, $h)
+        {
+            
+            $this->base = $b;
+            $this->height = $h;
+            
+        }
+
+    public function calculateArea()
+    {
+        echo "The area of Triangle is: " . ($this->base * $this->height)/2 . "<br>";
+    }
+    }
 
 $ob = new Circle(2);
 $ob->calculateArea();
 
 $object = new Rectangle(5, 6);
+$object->calculateArea();
+
+$object2 = new Triangle(4, 5);
 $object->calculateArea();
 
 ?>
