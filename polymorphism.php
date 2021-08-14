@@ -67,6 +67,6 @@ $object = new Rectangle(5, 6);
 $object->calculateArea();
 
 $object2 = new Triangle(4, 5);
-$object->calculateArea();
+$object2->calculateArea();
 
 ?>
