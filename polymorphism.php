@@ -18,7 +18,7 @@ class Circle implements Shape{
 
     public function calculateArea()
     {
-        echo "The area of circle is: ".pi().$this->radius*$this->radius."<br>";
+        echo "The area of circle is: ".pi()*$this->radius*$this->radius."<br>";
     }
 }
 
