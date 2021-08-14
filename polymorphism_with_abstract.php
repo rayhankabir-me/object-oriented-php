@@ -23,8 +23,30 @@ class Circle extends Shape{
     {
         echo "The Circle area is: ". pi()*$this->radius*$this->radius."<br>";
     }
+
+
+}
+
+class Rectangle extends Shape
+{
+
+    private $width;
+    private $height;
+
+    public function __construct($w, $h)
+    {
+        $this->width = $w;
+        $this->height = $h;
+    }
+
+    public function calculateArea()
+    {
+        echo "The area of Rectangle is: " . ($this->width * $this->height) / 2 . "<br>";
+    }
 }
 
 $ob = new Circle(4);
+$ob->calculateArea();
+$ob = new Rectangle(4, 5);
 $ob->calculateArea();
 ?>
