@@ -12,8 +12,8 @@ $ob = new rayhan\ Ruby();
 
 echo HTML;  //define works without calling the namespace path
 
-echo rayhan\ NAME;  //costant doesn't work without calling the namespace path
+echo rayhan\ NAME;  //constant doesn't work without calling the namespace path
 
-rayhan\Age();  //fuction doesn't work without calling the namespace path
+rayhan\Age();  //function doesn't work without calling the namespace path
 
 ?>
