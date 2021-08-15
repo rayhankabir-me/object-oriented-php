@@ -6,8 +6,10 @@ include "java.php";
 include "php.php";
 include "Ruby.php";
 
+use rayhan\dev\PHP as pihp;
+
 $ob = new rayhan\Java();
-$ob = new rayhan\dev\ PHP();
+$ob = new pihp();
 $ob = new rayhan\ Ruby();
 
 echo HTML;  //define works without calling the namespace path
