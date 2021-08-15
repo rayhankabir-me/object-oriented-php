@@ -1,5 +1,7 @@
 <?php
 
+namespace rayhan;
+
 class Ruby{
 
     public function __construct()

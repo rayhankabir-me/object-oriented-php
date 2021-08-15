@@ -1,4 +1,7 @@
 <?php
+
+namespace rayhan\dev;
+
 class PHP{
     public function __construct()
     {
